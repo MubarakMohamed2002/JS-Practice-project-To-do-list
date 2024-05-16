@@ -12,6 +12,8 @@ const generateTemplate = todo => {
   list.innerHTML += html
 };
 
+// add todos event
+
 addForm.addEventListener('submit', e=>{
     e.preventDefault();
     const todo = addForm.add.value.trim();
@@ -45,9 +47,6 @@ const filterTodos = (term) => {
 
 //keyup event
 search.addEventListener('keyup', () => {
-    // Check if search.value is defined before calling trim()
-    if (search.value !== undefined) {
-        const term = search.value.trim().toLowerCase();
-        filterTodos(term);
-    }
+    const term = search.value.trim().toLowerCase();
+    filterTodos(term);
 });
